@@ -1,24 +1,22 @@
-# README
+🛠️ Installation et Configuration
+Prérequis
+Ruby >= 3.0
+Rails >= 7.0
+Gems : nokogiri, httparty
+Étapes d'installation
+Clonez le dépôt :
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+bash
+Copier le code
+git clone https://github.com/votre-utilisateur/rails-scraper-service.git
+cd rails-scraper-service
+Installez les dépendances :
 
-Things you may want to cover:
+bash
+Copier le code
+bundle install
+Démarrez le serveur Rails :
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+bash
+Copier le code
+rails server
