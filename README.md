@@ -6,7 +6,7 @@
 * Gems : nokogiri, httparty
 
 # Étapes d'installation
-* Clonez le dépôt : git clone https://github.com/votre-utilisateur/rails-scraper-service.git
+* Clonez le dépôt : git clone https://github.com/mmtoure/test_scapping.git 
 * cd rails-scraper-service
 * Installez les dépendances : bundle install
 * Démarrez le serveur Rails : rails server
