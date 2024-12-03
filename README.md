@@ -12,5 +12,5 @@
 * Démarrez le serveur Rails : rails server
 
 # Test
-Apres demarrage du server
-Clicker sur le lien: http://localhost:3000/api/scrape
+* Apres demarrage du server
+* Clicker sur le lien: http://localhost:3000/api/scrape
