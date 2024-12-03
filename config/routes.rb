@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
   #
   # endpoint for scaping
-  get "/scrape", to: "scraper#scrape"
+  get "/api/scrape", to: "scraper#scrape"
 end
