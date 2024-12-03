@@ -1,10 +1,13 @@
 class ScraperController < ApplicationController
   def scrape
     # Url du site a scraper
-    url = "https://info.agriculture.gouv.fr/gedei/site/bo-agri/supima/7d1e4444-1888-4a06-9429-b5913a000b49"
+    url1 = "https://info.agriculture.gouv.fr/gedei/site/bo-agri/supima/7d1e4444-1888-4a06-9429-b5913a000b49"
+    url2 = "https://info.agriculture.gouv.fr/gedei/site/bo-agri/supima/ee1a7036-8ac6-4cc9-ad5a-f203359dd9d8"
 
-    if url.present?
-      result = perform_scraping(url)
+    if url1.present?
+      result1 = perform_scraping(url1)
+      result2 = perform_scraping(url2)
+      result = { denrees: result1, alertes_urgences: result2 }
       render json: result, status: :ok
     else
       render json: { error: "URL is required" }, status: :bad_request
@@ -30,12 +33,10 @@ class ScraperController < ApplicationController
     # Utilise Nokogiri pour analyser le contenu HTML de la page.
     doc = Nokogiri::HTML(html)
     # Get container
-    links = doc.css("div.container")
-    all_categories = links.css("div.menu-gauche-supima").css("ul")
+    content_page = doc.css("div.container")
+    all_categories = content_page.css("div.menu-gauche-supima").css("ul > ul")
     # fetch_all categories
-    titles = all_categories.css("ul").css("li").map { |element| element.text }
-    { categories: titles }
-
-    # fetch sub_categories
+    sub_categories = all_categories.css("ul > ul").css("li").map { |element| element.text }
+    { sous_category: sub_categories }
   end
 end
