@@ -42,4 +42,4 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 end
 
-gem "ransack", "~> 4.2"
+gem "ransack", "~> 4.3"
